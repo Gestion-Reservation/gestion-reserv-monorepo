@@ -1,0 +1,25 @@
+version: '3.0'
+
+services:
+  api:
+    build: ./backend
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./backend:/backend
+  
+
+  frontend:
+    build: ./frontend
+    volumes:
+      - ./frontend:/usr/src/app/frontend
+    ports:
+      - '8080:80'
+    depends_on:
+      - api
+    links:
+      - api
+    environment:
+      - NODE_ENV=production
+      - PORT=8080
+      - API_URL=http://api:3000

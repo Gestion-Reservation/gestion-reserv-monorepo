@@ -48,3 +48,8 @@ buildNumber.properties
 .classpath
 
 # End of https://www.toptal.com/developers/gitignore/api/maven,java
+
+./client/node_modules/
+./client/node_modules/.bin/
+./client/node_modules/.bin/babel-cli
+./client/src/components/**
